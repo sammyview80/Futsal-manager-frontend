@@ -10,6 +10,8 @@ body {
   color: white;
   background: url("./Assets/wallpaper.jpg");
   min-height: 100vh;
+  min-width: 100vw;
   background-repeat: no-repeat;
-  background-size: contain, cover;
+  background-size: cover;
+  background-position: center;
 }
