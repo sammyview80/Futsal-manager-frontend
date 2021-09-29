@@ -5,35 +5,26 @@ import './App.css';
 import Login from './Components/Auth/Login/Login';
 import Logout from './Components/Auth/Logout';
 import Signup from './Components/Auth/Signup/Signup';
-import CreateFutsal from './Components/Futsals/CreateFutsal';
-import GetPublisherFutsals from './Components/Futsals/GetPublisherFutsals';
+import CreateFutsal from './Components/Futsals/CreateFutsal/CreateFutsal';
+import GetPublisherFutsals from './Components/Futsals/GetPublisherFutsal/GetPublisherFutsals';
 import Navlinks from './Components/Navigation/Navlinks/Navlinks';
 import News from './Components/News/News';
 import Home from './Containers/Home/Home';
 import useGeoLocation from './Helper/geoLocation';
 
 
-let NewsFetch = [];
 
 function capitalize(s)
 {
     return s[0].toUpperCase() + s.slice(1);
 }
 
-const FetchNews = () => {
-  axios.get('http://127.0.0.1:8000/api/fetch-news/')
-    .catch(error => console.log(error.message)); // For reloading the news
-  axios.get('http://127.0.0.1:8000/api/getskysportsnews/')
-    .then(response => {
-      NewsFetch = response.data;
-    }).catch(error => console.log(error.message));
-}
-FetchNews();
+
   
 function App() {
   const [isLogginIn, setIsLogginIn] = useState();
   const [role, setRole] = useState();
-  const location = useGeoLocation();
+  // const location = useGeoLocation();
 
   const getMe = () => {
     axios.get('http://localhost:5000/api/v1/auth/me', {withCredentials: true} )
@@ -60,15 +51,14 @@ function App() {
     <BrowserRouter>
     {/* { location.loaded ? JSON.stringify(location) : ""} */}
     <Navlinks isLogin={isLogginIn} role={role===undefined? role : capitalize(role)}/>
-    {(NewsFetch.length === 0)? <div>Loading</div>: <News NewsFetch={NewsFetch} />}
     <Switch>
       <Route path="/auth/login" exact component={() => <Login isLogin = {isLogginIn} />}/>
-      <Route path="/news" exact component={() => <News full NewsFetch={NewsFetch}/>}/>
+      <Route path="/news" exact component={() => <News full/>}/>
       <Route path="/auth/signup" exact component={() => <Signup isLogin = {isLogginIn} />}/>
       <Route path="/create-futsal" exact component={CreateFutsal}/>
       <Route path="/futsals/my" exact component={GetPublisherFutsals}/>
       <Route path="/auth/logout" exact component={Logout}/>
-      <Route path="/" exact component={Home}/>
+      <Route path="/" exact component={() => <Home isLogin={isLogginIn} />}/>
     </Switch>
     </BrowserRouter>
   );

@@ -1,0 +1,55 @@
+.white-text-container h1,
+.white-text-container h2,
+.white-text-container h3,
+.white-text-container h4,
+.white-text-container h5,
+.white-text-container p {
+  color: #fff;
+  text-shadow: 0 1px 3px #000;
+}
+
+.container {
+  width: 100%;
+  height: 15rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container:after,
+.container:before {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+.col-md-6 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  position: relative;
+  min-height: 1px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row:after,
+.row:before {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.background-image-container {
+  background-image: url("../../Assets/wallpaper.jpg");
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 12% 0;
+}

@@ -1,3 +1,7 @@
+:root {
+  margin: 0;
+}
+
 li {
   list-style-type: none;
 }
@@ -7,11 +11,8 @@ a {
   color: inherit;
 }
 body {
-  color: white;
-  background: url("./Assets/wallpaper.jpg");
+  background-color: #fcf8e3;
+  color: #333;
   min-height: 100vh;
   min-width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }

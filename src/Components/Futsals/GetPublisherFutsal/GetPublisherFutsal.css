@@ -1,0 +1,39 @@
+.GetPublisherFutsal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  height: 40rem;
+  display: flex;
+  color: #fff;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  margin: 3px;
+  background-color: #100b33;
+}
+
+.card img {
+  width: 20rem;
+}
+
+.card .btn-primary {
+  margin: 0;
+}
+
+.info {
+  padding: 2rem;
+}
+
+.image {
+  padding: 2rem;
+}
+
+.card li {
+  padding: 3px;
+  word-spacing: 5px;
+  letter-spacing: 1.3px;
+}

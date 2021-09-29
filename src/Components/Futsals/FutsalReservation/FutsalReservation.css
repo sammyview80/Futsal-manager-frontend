@@ -1,0 +1,22 @@
+.Fields {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-top: 1rem;
+}
+/* .FutsalReservation p {
+  align-self: start;
+} */
+.FutsalReservation {
+  padding-top: 2rem;
+}
+.FutsalReservation input {
+  border-radius: 7px;
+  padding: 0.5rem;
+  margin: 0.6rem;
+}
+.Error {
+  color: red;
+  font-weight: bold;
+  font-size: 1.25rem;
+}

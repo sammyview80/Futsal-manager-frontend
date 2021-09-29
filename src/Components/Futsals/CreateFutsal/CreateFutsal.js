@@ -61,6 +61,9 @@ const CreateFutsal = () => {
     const ownerEmailHandler = (event) => {
         setOwnerEmail(event.target.value);
     }
+    const photoHandler = (event) => {
+        setPhoto(event.target.value);
+    }
 
 
     const ownerAddressHandler = (event) => {
@@ -79,6 +82,7 @@ const CreateFutsal = () => {
             status,
             photo: null,
             name,
+            photo,
             contactNumber,
             description,
             email,
@@ -130,6 +134,10 @@ const CreateFutsal = () => {
                 <div>
                     <h4 className="label">Name</h4>
                     <input type="text" name="InputEmail" placeholder='Name' onChange={nameHandler}></input>
+                </div>
+                <div>
+                    <h4 className="label">Image Link</h4>
+                    <input type="text" name="InputEmail" placeholder='Image Link' onChange={photoHandler}></input>
                 </div>
                 <div>
                     <h4 className="label">Description</h4>

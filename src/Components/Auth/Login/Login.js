@@ -1,62 +1,64 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link , Redirect} from 'react-router-dom';
 import Cookies from 'js-cookie';
 
+import './Login.css';
+
 const Login = (props) => {
-    console.log(props.isLogin)
-    // Send params : { email, password}
     const [email , setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     // Handler 
     const emailHandler = (event) => {
         setEmail(event.target.value);
-        console.log(email)
     }
 
     const passwordHandler = (event) => {
         setPassword(event.target.value);
-        console.log(password)
     }
 
-    const submitHandler = async() => {
+    const submitHandler = () => {
         const data = {
             email, 
             password
         }
-        axios.post('http://localhost:5000/api/v1/auth/login', data, {
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            withCredentials: true
-          })
+        console.log(data)
+        axios.post('http://localhost:5000/api/v1/auth/login', data, {withCredentials: true})
             .then(response => {
                 console.log(response.data);
                 window.location.reload(false);
             })
-            .catch(error => console.log(error.response.data));
+            .catch(error => console.log(error.message));
     }
     if(props.isLogin){
         return (
-            <div>You are logined!</div>
+            <Redirect to="/" />
         )
     }else {
         // HTML file to show to the user 
         return (
             <div className="Container">
-                <h3>Login</h3>
-                    <div>
-                        <h4>Email</h4>
-                        <input type="email" name="InputEmail" placeholder='Email' onChange={emailHandler}></input>
+                <div class="container" id="container">
+                    <div class="form-container sign-in-container">
+                        <div className="form">
+                            <h1>Login</h1>
+                            <input type="email" placeholder="Email" onChange={emailHandler}/>
+                            <input type="password" placeholder="Password"  onChange={passwordHandler} />
+                            <a href="#">Forgot your password?</a>
+                            <button onClick={submitHandler}>Login</button>
+                        </div>
                     </div>
-                    <div>
-                        <h4>Password</h4>
-                        <input type='password' name="InputPassword" placeholder='Password' onChange={passwordHandler}></input>
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-right">
+                                <h1>Hello, Friend!</h1>
+                                <p>Enter your personal details and start journey with us</p>
+                                <button class="ghost" id="signUp"><Link to="/auth/signup" > signup</Link></button>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <button type="submit" onClick={submitHandler} >Login</button>
-                    </div>
+                </div>
             </div>
         )
     }

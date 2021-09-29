@@ -1,18 +1,84 @@
 .Navs {
+  font-size: 1.2rem;
+  border-bottom: 1.8px solid #333;
+  margin-left: 6rem;
+  margin-right: 6rem;
   padding: 1rem;
+  padding-bottom: 3px;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(44, 99, 82);
+  align-items: center;
+  /* background-color: #005bff; */
 }
 .Navs-start {
   display: flex;
 }
 
 .Navs li {
-  font-weight: bold;
   padding: 0.4rem;
 }
 
 .Navs-end {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+element {
+}
+.btn-primary,
+.btn-primary:hover {
+  background-image: -webkit-linear-gradient(left, #8b62ff, #3b1bff);
+  background-image: -o-linear-gradient(left, #8b62ff 0, #3b1bff 100%);
+  background-image: linear-gradient(90deg, #8b62ff 0, #3b1bff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FF8B62FF",endColorstr="#FF3B1BFF",GradientType=1);
+}
+.btn-primary {
+  background-size: 200% auto;
+}
+.btn {
+  border: none;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.navbar-btn {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.navbar-btn {
+  float: left;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #8b62ff;
+  border-color: #8b62ff;
+}
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 8px 12px;
+  font-size: 15px;
+  line-height: 1.81;
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
