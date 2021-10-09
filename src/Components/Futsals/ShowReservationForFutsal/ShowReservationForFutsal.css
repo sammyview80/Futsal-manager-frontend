@@ -1,0 +1,9 @@
+.ShowReservationForFutsal {
+  max-width: fit-content;
+}
+
+.ShowReservationForFutsal .card {
+  margin-bottom: 1.5rem;
+  width: 22rem;
+  border-bottom: 2px solid white;
+}

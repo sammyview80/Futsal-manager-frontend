@@ -49,8 +49,10 @@ const FutsalReservation = (props) => {
           })
             .then(response => {
                 console.log(response.data);
-                console.log(response.data.message);
-                setError(response.data.message);
+                if(response.data.message !== undefined){
+                    return setError(response.data.message);
+                }
+                setError(response.data.sucess);
                 // props.setFutsalId(undefined); 
             })
             .catch(error => {
